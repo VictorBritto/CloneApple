@@ -3,6 +3,7 @@ import "../assets/homepage.css";
 
 </script>
 
+
 <template>
   <header class="navbar">
     <ul class="rotas">
@@ -17,8 +18,6 @@ import "../assets/homepage.css";
       <li><a>Entretenimento</a></li>
       <li><a>Acessórios</a></li>
       <li><a>Suporte</a></li>
-    </ul>
-    <ul>
       <li></li>
       <li><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -52,4 +51,15 @@ import "../assets/homepage.css";
   <div class="parcelas">
     <p>Pague seu novo iPhone em até 12 parcelas ou economize 10% nos pagamentos à vista.<a> Saiba mais</a></p>
   </div>
+  <div class="texto-venda">
+    <h1>iPhone</h1>
+    <h2>Designed to be loved.</h2>
+  </div>
+
+  <div>
+    <video autoplay loop muted>
+      <source :src="videoSrc" type="video/webm">
+    </video>
+  </div>
+
 </template>
