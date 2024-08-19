@@ -112,7 +112,6 @@
     color: #006BCE;
   }
 
-
   /* Parte de venda do Iphone -- centro da pagina*/
   .texto-venda{
     display: flex;
@@ -144,10 +143,32 @@
 
   /* Parte do video centro da pagina */
 
-  .apresentacao video{
+  .apresentacao video {
     position: relative;
-    margin-top: 38rem;
+    margin-top: 6%;
     width: 100%;
+    height: 80vh;
+    object-fit: cover;
     border-radius: 30px;
-    transform: translateY(-50%);
-  }
+}
+
+.textop1 h1 {
+  font-size: 46px;
+  line-height: 1.0714285714;
+  margin-left: 5%;
+  margin-top: 8%;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.elemento-aparecer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+}
+
+.elemento-aparecer.aparecer {
+  opacity: 1;
+  transform: translateY(0);
+}

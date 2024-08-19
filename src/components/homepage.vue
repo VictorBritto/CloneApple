@@ -123,22 +123,31 @@ import "../assets/homepage.css";
   autoplay muted loop>
   </video>
   </div>
+
+  <div class="elemento-aparecer" ref="elemento">
+    <div class="textop1">
+      <h1>Conheça o iPhone.</h1>
+    </div>
+  </div>
+
+
 </template>
 
 <script>
 export default {
   data() {
     return {
-      scale: 1
+      scale: 1,
+      visible: false,
     };
   },
   computed: {
     videoStyle() {
       return {
         transform: `scale(${this.scale})`,
-        transition: 'transform 0.1s ease-out'
+        transition: 'transform 0.1s ease-out',
       };
-    }
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
@@ -149,11 +158,20 @@ export default {
   methods: {
     handleScroll() {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const newScale = Math.max(0.9, 1 - scrollY / 1000);
+      const newScale = Math.max(0.9, 1 - scrollY / 1000); // Ajustado para uma escala mais natural
       this.scale = newScale;
 
-      
-    } 
-  }
+      //Parte do texto aparecendo conforme desce a pagina
+      const elemento = this.$refs.elemento;
+      const position = elemento.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (position < windowHeight) {
+        elemento.classList.add('aparecer');
+      } else {
+        elemento.classList.remove('aparecer');
+      }
+    },
+  },
 };
 </script>
